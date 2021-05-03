@@ -2,7 +2,7 @@ A Grocery List for supermarket shopping with name, price and quantity.
 
 If the list already contains an item then it only updates the price and quantity it do not append the item name again.
 
-The user puts his/her budget initially and the amount is subtracted from the budget after adding a new item in the list. If budget go zero/0 then no more items could be bought and if some money left and users add items greater than the budget left then it informs “over price”.
+The user puts his/her budget initially and the amount is subtracted from the budget after adding a new item in the list. If budget go zero/0 then no more items could be bought and if some money left and users add items greater than the budget left then it informs “over price” with a message.
 
 After the list is made, from money left in the budget the code suggests items which you can buy(within the budget) from the list made.
 
@@ -114,10 +114,10 @@ Amount left can buy you wheat
 
 GROCERY LIST is:
 
-Product name    Quantity    Price
+Product name----Quantity----Price
 
-corn flour       2 kg         250
+corn flour-------2 kg---------250
 
-wheat            2 kg         100
+wheat------------2 kg---------100
 
-xyz              1 kg          50
+xyz--------------1 kg---------50
