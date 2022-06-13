@@ -1,0 +1,30 @@
+#from google.colab import drive
+#drive.mount('/content/drive')
+import string
+from collections import Counter
+import matplotlib.pyplot as plt
+#nltk.download('punkt')
+#nltk.download('stopwords')
+from nltk.tokenize import word_tokenize
+from nltk.corpus import stopwords
+text = open('/content/drive/My Drive/read.txt', encoding='utf-8').read()
+text = text.lower()
+text = text.translate(str.maketrans('','',string.punctuation))
+words = word_tokenize(text,"english")
+final_words = []
+for i in words:
+    if i not in stopwords.words('english'):
+        final_words.append(i)
+emotions_list = []
+with open('/content/drive/My Drive/emotions.txt','r') as file:
+    for j in file:
+        j = j.replace("\n",'').replace(",",'').replace("'",'').strip()
+        vocab,emotion = j.split(':')
+        if vocab in final_words:
+            emotions_list.append(emotion)
+w = Counter(emotions_list)
+#plt.figure(figsize=(20, 8))
+fig, ax1=plt.subplots()
+ax1.bar(w.keys(),w.values())
+fig.autofmt_xdate()
+plt.show()
